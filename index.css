@@ -1,0 +1,32 @@
+li {
+  color: black;
+  size : 10pt;
+  font : -moz-desktop;
+  text-align: left;
+  transition : 1s;
+  
+}
+
+li:hover {
+  text-decoration: line-through;
+  color : grey;
+  cursor : pointer;
+}
+
+
+.timerSection {
+	color : lightgray;
+	size : 8pt
+	font : -moz-desktop;
+	text-align: left;
+	transition : 1s;
+	border-color : lightgray;
+}
+
+.timerSection:hover {
+  text-decoration: underline;
+  color : black;
+  cursor : pointer;
+  border-color : black;
+}
+
