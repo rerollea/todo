@@ -11,7 +11,7 @@ var headingTodo = document.getElementById('pageHeader')
 var todoBlock = document.getElementById('todoBlock')
 var eventsNo = 0
 var todosNo = 0
-var targetDate = new Date("02/15/2023")
+var targetDate = new Date("02/15/2023"
 
 headingCountEvents.textContent='Number of events : ' + eventsNo;
 
