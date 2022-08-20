@@ -13,7 +13,8 @@ var eventsNo = 0
 var todosNo = 0
 var targetDate = new Date("02/15/2023")
 
-headingCountEvents.textContent='Number of events : ' + eventsNo;
+setEventsNo(eventsNo);
+
 
 createTodo('first item');
 createTodo('second item');
@@ -29,7 +30,10 @@ targetDateForm.addEventListener('submit',function(e){
 	targetDate = new Date(targetDateInput.value);
 	});
 
-
+function setEventsNo (count) {
+	headingCountEvents.textContent='Number of events : ' + count;
+	headingCountEvents.style.fontSize = (count<4?4:count)+'pt';
+}
 function createTodo (todoText) {
 	var todo = document.createElement('li');
 	todo.textContent = todoText; 
@@ -45,7 +49,7 @@ function createTodo (todoText) {
 		todo.style.cursor = 'pointer';
 		todo.style.border = '1px dotted black';
 		eventsNo++;
-		headingCountEvents.textContent='Number of events : ' + eventsNo;
+		setEventsNo(eventsNo);
 		});
 	todo.addEventListener ('mouseout',function(){
 		if (todoText == "") {
@@ -170,8 +174,8 @@ buttonClear.addEventListener('click',function() {
 		todo = todoList.firstElementChild;
 		// reset event counter and display
 		eventsNo = 0;
-		headingCountEvents.textContent='Number of events : ' + eventsNo;
-		}
+		setEventsNo(eventsNo);
+	}
 
 	});
 	
