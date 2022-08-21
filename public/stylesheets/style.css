@@ -1,3 +1,17 @@
+
+.screen {
+  background-color: #a9dce9; /* LightBlue */
+  color: black;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.container-fluid {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 li {
   color: black;
   size : 10pt;
@@ -13,14 +27,31 @@ li:hover {
   cursor : pointer;
 }
 
+.todoelement {
+  border: black;
+  color: black;
+  transition: 2s;
+}
+
+.todoemptyelement {
+  font-style: italic;
+  color: rgb(189, 161, 186);
+}
+
+.todoelement:hover {
+  color: 'blue';
+  textDecoration: 'line-through';
+  cursor: 'pointer';
+  border: '1px dotted black';
+}
 
 .timerSection {
-	color : lightgray;
-	size : 8pt;
-	font : -moz-desktop;
 	text-align: left;
 	transition : 1s;
 	border-color : lightgray;
+  size : 10pt;
+  color : rgb(36, 36, 36);
+  font : -moz-desktop;
 }
 
 .timerSection:hover {

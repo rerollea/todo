@@ -4,25 +4,25 @@ var targetDateInput = document.getElementById('targetDateInput');
 var targetDateForm = document.getElementById('targetDateForm');
 var todoForm = document.getElementById('todoForm')
 var input = document.getElementById('todoInput')
-var todoList = document.querySelector('ul')
+var todoList = document.querySelector('ol')
 var headingCountEvents = document.getElementById('countEvents');
 var headingTimeAndDate = document.getElementById('timeAndDate');
 var headingTodo = document.getElementById('pageHeader')
-var todoBlock = document.getElementById('todoBlock')
+// var todoBlock = document.getElementById('todoBlock')
 var eventsNo = 0
 var todosNo = 0
 var targetDate = new Date("02/15/2023")
 
-setEventsNo(eventsNo);
-
-
-createTodo('first item');
-createTodo('second item');
-setInterval(updateTimeAndDate,1000);
+function init(){
+	setEventsNo(0);
+	createTodo('first item');
+	createTodo('second item');
+	setInterval(updateTimeAndDate,1000);
+}
 
 todoForm.addEventListener('submit',function(e){
 	e.preventDefault();
-	createTodo(input.value);
+	//createTodo(input.value);
 	});
 
 targetDateForm.addEventListener('submit',function(e){
@@ -36,22 +36,18 @@ function setEventsNo (count) {
 }
 function createTodo (todoText) {
 	var todo = document.createElement('li');
+	todo.classList = 'todoelement';
 	todo.textContent = todoText; 
-	todo.style.border = 'black';
-	todo.style.transition = '2 s';
 	if (todoText == "") {
 		todo.textContent = '(Empty todo)';
-		todo.style.color = 'lightgray';
+		todo.classList = 'todoemptyelement todoelement';
 	}
 	todo.addEventListener ('mouseover',function(){
-		todo.style.color = 'blue';
-		todo.style.textDecoration = 'line-through';
-		todo.style.cursor = 'pointer';
-		todo.style.border = '1px dotted black';
 		eventsNo++;
 		setEventsNo(eventsNo);
 		});
-	todo.addEventListener ('mouseout',function(){
+
+/*		todo.addEventListener ('mouseout',function(){
 		if (todoText == "") {
 			todo.style.color = 'lightgray';
 		}
@@ -64,12 +60,12 @@ function createTodo (todoText) {
 		todo.style.border = '';
 		});
 
-
+*/
 		todo.addEventListener ('click',function(){
 			setTimeout (function() {
 				removeTodo(todo);
 			}, 500);
-			todo.style.color = 'white';
+			//todo.style.color = 'white';
 		});
 	todoList.appendChild(todo)
 	todosNo++;
@@ -167,16 +163,15 @@ function removeTodo(todoToBeRemoved) {
 	}
 buttonClear.addEventListener('click',function() {
 	// action will go here
-
+	//e.preventDefault();
 	var todo = todoList.firstElementChild
 	while (todo) {
 		removeTodo(todo);
 		todo = todoList.firstElementChild;
+		}	
 		// reset event counter and display
 		eventsNo = 0;
 		setEventsNo(eventsNo);
-	}
-
 	});
 	
 	buttonAdd.addEventListener('click',function(e) {
@@ -185,4 +180,4 @@ buttonClear.addEventListener('click',function() {
 	createTodo(input.value);
 	});
 
-
+	init();
