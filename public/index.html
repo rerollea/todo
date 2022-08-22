@@ -9,36 +9,55 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class='container-fluid screen'>
-    <div class='container-fluid text-center'>
-        <form id="todoForm"><p id="pageHeader">Add to do :</p>
-            <input type="text" id="todoInput" placeholder="new todo">
-            <button id="addToDo">Add to do</button>
+    <div class="jumbotron text-center">
+        <h3>
+            My todo list
+            <p>Information about me</p>
+        </h3>
+    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <p>Add to do :</p>
+            <form id="todoForm">
+                <input type="text" id="todoInput" placeholder="new todo">
+                <button id="addToDo">Add to do</button>
+            </form> 
+        </div>
+        <div class="col-sm-6 text-left">
+            <div class='container-fluid text-left' id="todoBlock">
+                <p id="pageHeader">Add to do :</p>
+                <ol class='text-center table-bordered container-fluid'>
+                    <!-- <li>list goes here</li>  -->
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-3 text-left">
+            <p>Commands : </p>
             <button id="clearAll">Clear all</button>
-        </form>        
-        <div class='container-fluid text-center' id="todoBlock">
-            <ol class='text-center container-fluid'>
-                <!-- <li>list goes here</li>  -->
-            </ol>
         </div>
     </div>
-
-    <div class='timerSection container-fluid text-center' >
-        <form id="targetDateForm" class="timerSection">
-            <input class="timerSection" type="datetime" id="targetDateInput" placeholder="02/15/2023">
-        </form>
-        <p class="timerSection" id="timeAndDate">Timer up to</p>
-    </div>
-
-
-    <div>
-        <p class="countEvents container-fluid text-center" id="countEvents">Number of events goes here</p>
-    </div>
-    <div class='shadowbox container-fluid text-center'>
-        <p>A - Voici un paragraphe très intéressant inscrit dans une boîte
-        avec une ombre.</p>
-    </div>
 </div>
-<script src="./javascripts/main.js"></script>
+<div class="jumbotron text-center">
+    <h3>
+        Page footer
+        <p>Some more information</p>
+        <div class='timerSection container-fluid text-center' >
+            <form id="targetDateForm" class="timerSection">
+                <input class="timerSection" type="datetime" id="targetDateInput" placeholder="02/15/2023">
+            </form>
+            <p class="timerSection" id="timeAndDate">Timer up to</p>
+        </div>
+        <div>
+            <p class="countEvents container-fluid text-center" id="countEvents">Number of events goes here</p>
+        </div>
+        <div class='shadowbox container-fluid text-center'>
+            <p>A - Voici un paragraphe très intéressant inscrit dans une boîte
+            avec une ombre.</p>
+        </div>
+    </h3>
+</div>
+
+    <script src="./javascripts/main.js"></script>
 </body>
 </html>
